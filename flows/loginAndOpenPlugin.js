@@ -33,11 +33,9 @@ const multiPageLogin = async (page) => {
 };
 
 const initiateLogin = async (page) => {
-  try {
-    await loginFromFile(page);
-  } catch (error) {
-    await multiPageLogin(page);
-  }
+  await loginFromFile(page);
+  // If the login form is split into two pages.
+  // await multiPageLogin(page);
 };
 
 // Dismisses the notification about opening the desktop app.
