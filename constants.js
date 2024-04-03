@@ -1,12 +1,13 @@
-import * as dotenv from "dotenv";
+import * as dotenv from 'dotenv';
 dotenv.config();
 
-export const pluginSearchTerm = "Figgy Run";
+export const pluginSearchTerm = 'Variable handler';
+export const colorScheme = '08C5E0';
 
 export const puppeteerConfig = {
   executablePath: process.env.CHROME_PATH,
-  headless: process.env.HEADLESS_MODE === "true",
-  devtools: process.env.DEVTOOLS === "true",
+  headless: process.env.HEADLESS_MODE === 'true',
+  devtools: process.env.DEVTOOLS === 'false',
 };
 
 export const credentials = {
@@ -15,22 +16,23 @@ export const credentials = {
 };
 
 export const operatingSystems = {
-  mac: "darwin",
-  windows: "win32",
+  mac: 'darwin',
+  windows: 'win32',
 };
 
 export const selectors = {
   loginForm: {
-    emailInput: "#email",
-    passwordInput: "#current-password",
+    emailInput: '#email',
+    passwordInput: '#current-password',
     loginButton: 'button[type="submit"]',
   },
   notification: {
-    dismissButton: 'button[class*="close_button"]',
+    dismissButton: 'button[class^="basic_form--btn"]',
   },
   navbar: {
     loginButton: '[class*="loginButton"]',
     menuDropdown: 'button[class*="toolbar_styles--enabledButton"]',
   },
   quickActionsInput: 'input[class*="quick_actions--searchInput"]',
+  quickActionsParmaterInput: 'div[class^="plugin_parameter_entry"] input',
 };
